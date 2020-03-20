@@ -1,0 +1,151 @@
+<div class="js-input">
+<div class="section first"> <!-- section1 タイトル -->
+    <h2 class="tit_category">パルス速度[Hz]の算出</h2>
+    <p>パルス速度の計算を簡単におこなえます。<br>
+シリーズを選択し、条件を入力してください。「パルス速度の計算」ボタンを押すと計算結果が表示されます。</p>
+<!-- /section --></div> <!-- /section1 -->
+<div class="section"> <!-- section2 シリーズの選択 -->
+    <div class="tit_type02">
+    <h3><span class="tit">シリーズの選択</span></h3>
+    <!-- /tit_type02 --></div>
+    <div class="js-seriesSelect">
+        <input id="AR" class="radio-inline__input" type="radio" name="series-radio" value="AR" checked="checked">
+        <label class="radio-inline__label" for="AR">AR</label>
+        <input id="AZ" class="radio-inline__input" type="radio" name="series-radio" value="AZ">
+        <label class="radio-inline__label" for="AZ">AZ</label>
+        <input id="RK2" class="radio-inline__input" type="radio" name="series-radio" value="RK2">
+        <label class="radio-inline__label" for="RK2">RKⅡ</label>
+        <input id="CRK" class="radio-inline__input" type="radio" name="series-radio" value="CRK">
+        <label class="radio-inline__label" for="CRK">CRK</label>
+        <input id="other" class="radio-inline__input" type="radio" name="series-radio" value="other">
+        <label class="radio-inline__label" for="other">その他</label>
+    </div>
+    <table class="mt10">
+    <tbody>
+    <tr class="odd last first">
+        <th class="tit wl">モーターの分解能</th>
+        <td class="txtbox w-input"><input class="js-resolution input-num" value="1000" maxlength="10" readonly=""></td>
+        <td class="txt w-unit pl07 pr07">[P/R]</td>
+        <td class="txt"><span class="js-err-resolution fRed"></span></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="clearfix">
+    <a href="/tech/support_tool/e_gear/" class="linkTypeR03 flR mr20" target="_blank">モーターの分解能が計算できます</a>
+    </div>
+<!-- /section --></div> <!-- /section2 -->
+<div class="section last"> <!-- section3 入力と出力 -->
+    <div class="tit_type02">
+		<h3><span class="tit">条件の入力・計算結果の表示</span></h3>
+	<!-- /tit_type02 --></div>
+    <div class="js-unit">
+    </div><table>
+    <tbody>
+    <tr class="odd last first">
+        <th class="tit"><label></label></th>
+        <td class="radio">
+        <input id="mm_s" class="radio-inline__input" type="radio" name="unit-radio" value="mm/s" checked="checked">
+        <label class="radio-inline__label" for="mm_s">mm/s</label>
+        <input id="m_min" class="radio-inline__input" type="radio" name="unit-radio" value="m/min">
+        <label class="radio-inline__label" for="m_min">m/min</label>
+        <input id="deg_s" class="radio-inline__input" type="radio" name="unit-radio" value="deg/s">
+        <label class="radio-inline__label" for="deg_s">deg/s</label>
+        <input id="r_min" class="radio-inline__input" type="radio" name="unit-radio" value="r/min">
+        <label class="radio-inline__label" for="r_min">r/min</label>
+        </td>
+    </tr>
+     <!-- /js-unit -->
+    </tbody>
+    </table>
+
+    <table class="mt10">
+    <tbody>
+    <tr class="odd first">
+        <th class="tit wl"><label for="distance_per_rotation">1回転あたりの移動量</label></th>
+        <td class="txtbox">
+            <input type="text" class="js-distance_per_rotation input-num" id="distance_per_rotation" name="distance_per_rotation" maxlength="10">
+        </td>
+        <td class="txt pl07 pr07"><span class="js-unit-distance_per_rotation">[mm]</span></td>
+        <td class="txt"><span class="js-err-distance_per_rotation fRed"></span></td>
+    </tr>
+
+    <tr class="last">
+        <th class="tit wl pt10 pb10"><label for="speed_input">機構上の速度</label></th>
+        <td class="txtbox">
+            <input type="text" class="js-speed_input input-num" id="speed_input" name="speed_input" maxlength="10">
+        </td>
+        <td class="txt pl07 pr07"><span class="js-unit-speed_input">[mm/s]</span></td>
+        <td class="txt"><span class="js-err-speed_input fRed"></span></td>
+    </tr>
+
+    </tbody>
+    </table>
+
+    <div class="js-geardMotor">
+    </div><div class="js-transmission">
+    </div><table class="mt10">
+    <tbody>
+    <tr class="odd first">
+        <th class="tit wl">ギヤードモーターを使用</th>
+        <td class="radio">
+        <input id="geardMotorNo" class="radio" type="radio" name="geardMotor-radio" value="geardMotorNo" checked="checked">
+        <label for="geardMotorNo">いいえ</label>
+        <input id="geardMotorYes" class="radio" type="radio" name="geardMotor-radio" value="geardMotorYes">
+        <label for="geardMotorYes">はい</label>
+        </td>
+    </tr>
+    <tr>
+        <th class="tit taR wl"><span class="pr10">減速比</span></th>
+        <td class="txtbox">
+            <input class="js-ratioGeardMotor input-num" type="text" name="ratioGeardMotor" value="1" placeholder="1" maxlength="10" readonly="">
+        </td>
+        <td class="txt">
+        <span class="js-err-ratioGM fRed"></span>
+        </td>
+    </tr>
+     <!-- /js-geardMotor -->
+
+    <tr class="odd">
+        <th class="tit wl pt10">外部減速機を使用</th>
+        <td class="radio pt10">
+        <input id="transmissionNo" class="radio" type="radio" name="externalGear-radio" value="transmissionNo" checked="checked">
+        <label for="transmissionNo">いいえ</label>
+        <input id="transmissionYes" class="radio" type="radio" name="externalGear-radio" value="transmissionYes">
+        <label for="transmissionYes">はい</label>
+        </td>
+    </tr>
+    <tr class="last">
+        <th class="tit taR wl"><span class="pr10">減速比</span></th>
+        <td class="txtbox">
+            <input class="js-ratioTransmission input-num" type="text" name="ratioTransmission" value="1" placeholder="1" maxlength="10" readonly="">
+        </td>
+        <td class="txt"><span class="js-err-ratioTr fRed"></span></td>
+    </tr>
+     <!-- /js-transmission -->
+
+    </tbody>
+    </table>
+
+    <div class="mlForButton mt15 mb15">
+        <button class="js-calc btn-pulse-calc" disabled="">パルス速度の計算</button>
+    </div>
+
+    <table class="calc-result mt10">
+    <tbody>
+    <tr class="odd first">
+        <th class="tit wl pt20"><span class="pl15">パルス速度</span></th>
+        <td class="txtbox pt20">
+        <input type="text" class="js-pulse input-num" readonly="">
+        </td>
+        <td class="txt pl07 pr07 pt20"><span class="pr15">[Hz]</span></td>
+    </tr>
+    <tr class="last">
+        <th class="taR pt10 pb20" colspan="3"><span class="pr15">小数点以下を四捨五入しています</span></th>
+    </tr>
+    </tbody>
+    </table>
+    <div class="clearfix">
+    <a href="/tech/support_tool/speed/" class="linkTypeR03 flR mr20" target="_blank">さまざまな機構で速度換算ができます</a>
+    </div>
+</div> <!-- /section3 -->
+</div>

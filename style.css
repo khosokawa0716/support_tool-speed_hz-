@@ -1,0 +1,74 @@
+<style type="text/css">
+
+.radio-inline__input {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+.radio-inline__label {
+	width: 40px;
+	text-align: center;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: all .2s;
+}
+.radio-inline__input:checked + .radio-inline__label {
+    background: #104974;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.wl {
+	width: 180px;
+}
+.w-unit{
+	width: 31px;
+}
+.mlForButton {
+    margin-left:169px;
+}
+
+.input-num{
+    background: #FFFF99;
+	width: 81px;
+	text-align: right;
+}
+
+.input-num[readonly] {
+    background: #ececec;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+
+.btn-pulse-calc{
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 4px;
+/*    background: #f75700;*/
+    background: linear-gradient(#4e5461 0%, #0d1933 100%);
+}
+.btn-pulse-calc:hover {
+    opacity: 0.85;
+}
+.btn-pulse-calc:disabled {
+    cursor: default;
+    font-weight: normal;
+    color: #525252;
+    background: #ffffff;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+}
+.btn-pulse-calc:hover:disabled {
+    opacity: 1.0;
+}
+
+.calc-result{
+    background: #ececec;
+}
+</style>
